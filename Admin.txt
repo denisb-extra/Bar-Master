@@ -1,0 +1,7 @@
+[text your-name placeholder "שם מלא"]
+[tel* your-tel placeholder "טלפון"]
+
+[email* your-email placeholder "אימייל"]
+[select course "קורס" "קורס 1" "קורס 2"]
+[select office "סניף" "סניף 1" "סניף 2"]
+[submit "שליחה"]

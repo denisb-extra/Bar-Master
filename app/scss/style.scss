@@ -1,0 +1,136 @@
+$mw: 1000px;
+$wm: 1200px;
+
+@mixin border {
+	$red: random(256)-1;
+	$green: random(256)-1;
+	$blue: random(256)-1;
+ 	border: 1px solid red;
+ 	border-color: rgb($red, $green, $blue);
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	  color: $color;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	  color: $color;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	  color: $color;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	  color: $color;
+	}
+}
+
+@mixin gr-bg {
+	background-image: linear-gradient(to right, #cb356b , #bd3f32);
+} 
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900');
+
+@mixin f-l {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 300;
+}
+
+@mixin f-r {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+}
+
+@mixin f-m {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 500;
+}
+
+@mixin f-b {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 700;
+}
+
+@mixin f-bl {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 900;
+}
+
+@font-face {
+    font-family: 'fb-liddar';
+    src: url('../fonts/FbLiddar-Regular.otf') format('truetype');
+}
+
+@mixin f-lidar {
+    font-family: 'fb-liddar';
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'fb-liddar-bold';
+    src: url('../fonts/FbLiddar-Bold.otf') format('truetype');
+}
+
+@mixin f-lidar-b {
+    font-family: 'fb-liddar-bold';
+    font-weight: normal;
+}
+
+
+/* /Fonts */
+
+
+
+
+/* Global */
+html {
+	margin: 0 !important;
+	overflow-x: hidden;
+}
+body {
+	position: relative;
+	margin: 0;
+  	padding: 0;
+  	font-size: 0;
+	overflow-x: hidden;
+  	@media only screen and (max-width : $mw) {
+  		padding-top: 45px;
+  	}
+}
+
+a {
+  text-decoration: none;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	direction: rtl;
+}
+
+p {
+    margin: 0;
+}
+ul {
+	-webkit-padding-start: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+section {
+	width: 100%;
+	max-width: 1920px;
+	margin: auto;	
+	overflow: hidden;
+}
+
+.section-inner {
+	max-width: 1310px;
+	padding: 0 10px;
+	width: 100%;
+	margin: auto;
+}
+
+
+@import 'index';
+@import 'inner';
