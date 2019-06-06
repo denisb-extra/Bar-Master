@@ -1900,13 +1900,19 @@ section.gallery {
 
 /* --------------------- /Section gallery ---------------------- */
 /* ---------------------- Section course ---------------------- */
+section.course.inverse .parts {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+  section.course.inverse .parts .part-right {
+    padding-left: 0;
+    padding-right: 3%; }
+
 section.course .parts {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  display: flex; }
   section.course .parts .part {
     width: 50%; }
   section.course .parts .part-right {
@@ -1949,6 +1955,69 @@ section.course .parts {
       margin-right: 25px; }
       section.course .parts .part-right .who li:first-child {
         margin-right: 0; }
+    section.course .parts .part-right .bar-bottom {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-top: 35px; }
+      section.course .parts .part-right .bar-bottom .price-normal {
+        background: #e8e8e9;
+        text-align: center;
+        padding: 15px;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1; }
+        section.course .parts .part-right .bar-bottom .price-normal .title {
+          font-family: 'Rubik', sans-serif;
+          font-weight: 500;
+          font-size: 17px; }
+        section.course .parts .part-right .bar-bottom .price-normal .price {
+          font-family: 'Rubik', sans-serif;
+          font-weight: 400;
+          font-size: 24px;
+          color: #a7a7a7;
+          text-decoration: line-through;
+          margin-top: 10px; }
+      section.course .parts .part-right .bar-bottom .price-sale {
+        background: #f0f1f4;
+        text-align: center;
+        padding: 15px;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1; }
+        section.course .parts .part-right .bar-bottom .price-sale .title {
+          font-family: 'Rubik', sans-serif;
+          font-weight: 500;
+          font-size: 17px; }
+        section.course .parts .part-right .bar-bottom .price-sale .price {
+          font-family: 'Rubik', sans-serif;
+          font-weight: 700;
+          font-size: 24px;
+          color: #c23a4c;
+          margin-top: 10px; }
+      section.course .parts .part-right .bar-bottom .button {
+        font-family: 'Rubik', sans-serif;
+        font-weight: 700;
+        font-size: 17px;
+        color: #fff;
+        background-image: -webkit-gradient(linear, left top, right top, from(#cb356b), to(#bd3f32));
+        background-image: linear-gradient(to right, #cb356b, #bd3f32);
+        padding: 0 55px;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+        display: block;
+        position: relative; }
+        section.course .parts .part-right .bar-bottom .button span {
+          position: absolute;
+          top: 50%;
+          display: inline-block;
+          width: 100%;
+          left: 0;
+          right: 0;
+          text-align: center;
+          -webkit-transform: translateY(-50%);
+                  transform: translateY(-50%); }
   section.course .parts .part-left img {
     max-width: 148%; }
 

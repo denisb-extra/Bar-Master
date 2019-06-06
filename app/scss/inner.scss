@@ -461,9 +461,19 @@ section.gallery {
 
 /* ---------------------- Section course ---------------------- */
 section.course {
+
+	&.inverse {
+		.parts {
+			flex-direction: row-reverse;
+			.part-right {
+				padding-left: 0;
+				padding-right: 3%;
+			}
+		}
+	}
 	.parts {
 		display: flex;
-		align-items: center;
+	
 		.part {
 			width: 50%;
 		}
@@ -517,6 +527,69 @@ section.course {
 					margin-right: 25px;
 					&:first-child {
 						margin-right: 0;
+					}
+				}
+			}
+
+			.bar-bottom {
+				display: flex;
+				margin-top: 35px;
+
+				.price-normal {
+					background: #e8e8e9;
+					text-align: center;
+					padding: 15px;
+					flex-grow: 1;
+					.title {
+						@include f-m;
+						font-size: 17px;
+					}
+
+					.price {
+						@include f-r;
+						font-size: 24px;
+						color: #a7a7a7;
+						text-decoration: line-through;
+						margin-top: 10px;
+					}
+				}
+
+				.price-sale {
+					background: #f0f1f4;
+					text-align: center;
+					padding: 15px;
+					flex-grow: 1;
+					.title {
+						@include f-m;
+						font-size: 17px;
+					}
+
+					.price {
+						@include f-b;
+						font-size: 24px;
+						color: #c23a4c;
+						margin-top: 10px;
+					}
+				}
+
+				.button {
+					@include f-b;
+					font-size: 17px;
+					color: #fff;
+					@include gr-bg;
+					padding: 0 55px;
+					flex-grow: 1;
+					display: block;
+					position: relative;
+					span {
+						position: absolute;
+						top: 50%;
+						display: inline-block;
+						width: 100%;
+						left: 0;
+						right: 0;
+						text-align: center;
+						transform: translateY(-50%);
 					}
 				}
 			}
