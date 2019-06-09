@@ -149,7 +149,7 @@
 					</div>
 				</div>
 				<div class="part part-left">
-					<img src="images/inner/courses/1.jpg" alt="">
+					<img src="images/inner/courses/1.jpg" alt="" class="wait-for-scroll">
 				</div>
 			</div>
 		</div>
@@ -160,9 +160,9 @@
 
 			<div class="parts">
 				<div class="part part-right">
-					<div class="section-title side-right wait-for-scroll">
+					<div class="section-title wait-for-scroll">
 						<p class="pre">קורס ברמנים</p>
-						<p class="main">מקצועי</p>
+						<p class="main"><strong>לחיילים</strong> לקראת שחרור</p>
 					</div>
 
 					<div class="content">
@@ -201,8 +201,86 @@
 					</div>
 				</div>
 				<div class="part part-left">
-					<img src="images/inner/courses/2.jpg" alt="">
+					<img src="images/inner/courses/2.jpg" alt="" class="wait-for-scroll">
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="course">
+		<div class="section-inner">
+
+			<div class="parts">
+				<div class="part part-right">
+					<div class="section-title side-right wait-for-scroll">
+						<p class="pre">קורס ברמנים</p>
+						<p class="main">מקיף</p>
+					</div>
+
+					<div class="content">
+						<p>קורס זה כולל 11 מפגשים בבר אמיתי בו המדריך יחד עם הסטודנטים מתרגלים הכנת משקאות אלכוהוליים מגוונים, קוקטיילים, כלי עבודה של ברמן, סביבת עבודה מאחורי הבר, מושגים כלליים על עולם האלכוהול, תרגול מעשי, טעימות ועוד נושאים רבים אשר מכינים אתכם לחיי הלילה בברים. </p>
+					</div>
+
+					<p class="subtitle">למי זה מתאים?</p>
+
+					<ul class="who">
+						<li>חיילים משוחררים</li>
+						<li>סטודנטים</li>
+						<li>חיילים</li>
+					</ul>
+
+					<p class="subtitle">מה מקבלים?</p>
+
+					<ul class="what">
+						<li>תעודת בינלאומית W.B.S.A (היחידים בישראל).</li>
+						<li>השמה לעבודה בסיום הקורס.</li>
+						<li>תרגול קוקטיילים עם אלכוהול בלבד (היחידים בישראל)</li>
+						<li>תרגול בבר אמיתי (היחידים בישראל)</li>
+					</ul>
+
+					<div class="bar-bottom">
+						<div class="price-normal">
+							<p class="title">מחיר רגיל</p>
+							<p class="price">2,800</p>
+						</div>
+						<div class="price-sale">
+							<p class="title">מחיר הרשמה מוקדמת</p>
+							<p class="price">₪1,999</p>
+						</div>
+						<a href="#" class="button">
+							<span>לפרטים נוספים </span>
+						</a>
+					</div>
+				</div>
+				<div class="part part-left">
+					<img src="images/inner/courses/3.jpg" alt="" class="wait-for-scroll"
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="info">
+		<div class="section-inner">
+			<p class="text">מתחייבים למחיר <strong>המשתלם ביותר!</strong></p>
+		</div>
+	</section>
+
+	<section class="gallery-slider">
+		<div class="section-inner">
+			<div class="section-title side-left wait-for-scroll">
+				<p class="pre">קורס ברמנים</p>
+				<p class="main">למה דווקא אצלנו?</p>
+			</div>
+		</div>
+		<div class="slider">
+			<div class="item">
+				<img src="images/inner/courses/slider/1.jpg" alt="">
+			</div>
+			<div class="item">
+				<img src="images/inner/courses/slider/2.jpg" alt="">
+			</div>
+			<div class="item">
+				<img src="images/inner/courses/slider/3.jpg" alt="">
 			</div>
 		</div>
 	</section>
@@ -294,7 +372,38 @@
 	<script>
 		$(document).ready(function ($) {
 			$("body").scrolledTo();
-			$(".accordion").accordion({header: "h3", collapsible: true, active: false});
+
+			if($(window).width() <= 900) {
+				$(".course .part-left").each(function(){
+					var el = $(this).parent().find(".content");
+					$(this).insertAfter(el);
+				});
+			}
+
+			$('.gallery-slider .slider').addClass("owl-carousel");
+			$('.gallery-slider .slider').addClass("owl-theme");
+			$('.gallery-slider .slider').owlCarousel({
+				items : 3, 
+				loop:true,
+				margin:50,
+				nav:false, 
+				dots: true,
+				autoplay: true,
+				smartSpeed: 1000,
+				center: true,
+				responsive : {
+					0 : {
+						margin:15,
+					},
+					500 : {
+						margin:30,
+					},
+					1000 : {
+						margin:50,
+					}
+				}
+			});
+
 		});
 	</script>
 </body>

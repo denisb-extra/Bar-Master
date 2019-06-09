@@ -108,7 +108,7 @@ section.about-inner {
 		}
 	}
 
-	@media only screen and (max-width : $wm) {
+	@media only screen and (max-width : $tw) {
 		.parts {
 			.part-right {
 				padding-left: 3%;
@@ -424,7 +424,7 @@ section.gallery {
 		}
 	}
 	
-	@media only screen and (max-width : $wm) {
+	@media only screen and (max-width : $tw) {
 		margin-top: 25px;
 		padding: 25px 0;
 		padding-bottom: 75px;
@@ -469,6 +469,20 @@ section.course {
 				padding-left: 0;
 				padding-right: 3%;
 			}
+
+			.part-left {
+				text-align: left;
+				direction: ltr;
+
+				img {
+					left: auto;
+					right: -50px;
+					&.scrolled-to {
+						right: 0;
+						left: auto;
+					} 
+				}
+			}
 		}
 	}
 	.parts {
@@ -478,7 +492,7 @@ section.course {
 			width: 50%;
 		}
 		.part-right {
-			padding: 25px 0;
+			padding: 30px 0;
 			padding-left: 3%;
 
 			.content {
@@ -495,7 +509,7 @@ section.course {
 				@include f-b;
 				font-size: 25px;
 				color: #21262c;
-				margin-top: 25px;
+				margin-top: 20px;
 			}
 			
 			ul {
@@ -586,8 +600,8 @@ section.course {
 						top: 50%;
 						display: inline-block;
 						width: 100%;
-						left: 0;
-						right: 0;
+						left: 0px;
+						right: 0px;
 						text-align: center;
 						transform: translateY(-50%);
 					}
@@ -599,14 +613,24 @@ section.course {
 			//direction: ltr;
 			img {
 				max-width: 148%;
+				position: relative;
+				transition: 1s;
+				left: -50px;
+				opacity: 0;
+				&.scrolled-to {
+					left: 0;
+					opacity: 1;
+				} 
 			}
 		}
 	}
 
-	@media only screen and (max-width : $wm) {
+	@media only screen and (max-width : $tw) {
 		.parts {
 			.part-right {
-				padding-left: 3%;
+				.section-title.side-right {
+					margin-right: 10%;
+				}
 				.content {
 					margin-top: 25px;
 					font-size: 15px;
@@ -615,14 +639,63 @@ section.course {
 					}
 				}
 
-				.link {
-					font-size: 18px;
-					margin-top: 30px;
+				.subtitle {
+					font-size: 20px;
+					margin-top: 15px;
 				}
+				
+				ul {
+					margin-top: 10px;
+					li {
+						font-size: 15px;
+						padding-right: 24px;
+						margin-top: 10px;
+					}
+				}
+
+				.bar-bottom {
+					margin-top: 25px;
+					.price-normal {
+						padding: 10px;
+						.title {
+							@include f-m;
+							font-size: 17px;
+						}
+
+						.price {
+							font-size: 18px;
+							margin-top: 10px;
+						}
+					}
+
+					.price-sale {
+						padding: 10px;
+						.title {
+							@include f-m;
+							font-size: 17px;
+						}
+
+						.price {
+							font-size: 18px;
+							margin-top: 10px;
+						}
+					}
+
+					.button {
+						padding: 0 55px;
+						span {
+							white-space: normal;
+							display: block;
+							left: 0;
+							right: 0;
+							width: 100%;
+							padding: 0 10px;
+						}
+					}
+				}
+
 			}
 			.part-left {
-				//text-align: left;
-				//direction: ltr;
 				img {
 					max-width: 140%;
 				}
@@ -633,6 +706,10 @@ section.course {
 	@media only screen and (max-width : 900px) {
 		.parts {
 			flex-direction: column;
+			.part-right {
+				padding-left: 0;
+				padding-right: 0;
+			}
 			.part {
 				width: 100%;
 			}
@@ -640,11 +717,113 @@ section.course {
 			.part-left {
 				//text-align: left;
 				//direction: ltr;
+				margin-top: 15px;
 				img {
 					max-width: 100%;
 				}
 			}
 		}
+
+		&.inverse {
+			.parts {
+				flex-direction: column;
+			}
+		}
 	}
 }
 /* --------------------- /Section course ---------------------- */
+
+/* ---------------------- Section info ---------------------- */
+section.info {
+	padding: 45px 0;
+	background: #f0f1f4;
+	text-align: center;
+	.text {
+		display: inline-block;
+		@include f-m;
+		font-size: 25px;
+		line-height: 25px;
+		height: 25px;
+		color: #21262c;
+		position: relative;
+
+		strong {
+			@include f-b;
+			color: #c23a4c;
+		}
+
+		&:after, &:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -120px;
+			height: 2px;	
+			width: 100px;
+			@include gr-bg;
+		}
+
+		&:before {
+			left: auto;
+			right: -120px;
+		}
+	}
+
+	@media only screen and (max-width : 900px) {
+		padding: 35px 0;
+		.text {
+			font-size: 20px;
+			&:after, &:before {
+				width: 75px;
+			}
+		}
+	}
+}
+/* --------------------- /Section info ---------------------- */
+
+/* ---------------------- Section gallery-slider ---------------------- */
+section.gallery-slider {
+	padding: 80px 0;
+	.section-title {
+		margin-right: 45%;
+	}
+	.slider {
+		.owl-stage-outer {
+			padding: 80px 0;
+		}
+		.owl-item {
+			transition: 0.5s;
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				background-color: #000;
+				opacity: 0.5;
+				transition: 0.5s;
+			}
+
+			&.center {
+				transform: scale(1.1);
+				&:after {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		padding: 35px 0;
+		.section-title {
+			margin-right: 15%;
+		}
+		.slider {
+			.owl-stage-outer {
+				padding: 40px 0;
+			}
+		}
+	}
+}
+/* --------------------- /Section gallery-slider ---------------------- */
