@@ -89,6 +89,7 @@ html {
 	overflow-x: hidden;
 }
 body {
+	@include f-r;
 	position: relative;
 	margin: 0;
   	padding: 0;
@@ -97,10 +98,15 @@ body {
   	@media only screen and (max-width : $mw) {
   		padding-top: 45px;
   	}
+
+  	@media only screen and (max-width : 700px) {
+  		padding-bottom: 50px;
+  	}
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
+	color: inherit;
 }
 
 *, *::before, *::after {
@@ -134,3 +140,4 @@ section {
 
 @import 'index';
 @import 'inner';
+@import 'woo';

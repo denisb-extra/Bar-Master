@@ -149,7 +149,9 @@ body.fancybox-iosfix {
 .fancybox-slide--video .fancybox-content,
 .fancybox-slide--video iframe {
   background: #000; }
-
+.fancybox-slide video {
+  width: 100%;
+}
 .fancybox-slide--map .fancybox-content,
 .fancybox-slide--map iframe {
   background: #E5E3DF; }
@@ -160,7 +162,7 @@ body.fancybox-iosfix {
 .fancybox-slide > * {
   display: inline-block;
   position: relative;
-  padding: 24px;
+  padding: 10px;
   margin: 44px 0 44px;
   border-width: 0;
   vertical-align: middle;
